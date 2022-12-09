@@ -1,0 +1,7 @@
+﻿<div dir="@Direction">
+    <textarea @ref="Element" class="form-control" @bind-value="Markdown" @bind-value:event="oninput" @onkeyup="OnInput">
+            </textarea>
+    <br />
+    <button type="button" class="btn btn-primary btn-sm" @onclick="OnPreview">Preview</button>
+</div>
+<MarkdownPreviewModal MarkdownText="@Markdown" @bind-Display="Display" @bind-Display:after="OnAfterPreview"></MarkdownPreviewModal>

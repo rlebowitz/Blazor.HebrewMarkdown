@@ -1,0 +1,23 @@
+﻿
+<div @ref="Control" class="modal fade @Show" tabindex="-1" role="dialog" style="display: @DisplayType;" 
+    @onkeydown="@(async (e) => await OnKeyDown(e))">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">@Title</h6>
+                <button type="button" class="btn-close btn-sm" aria-label="Close" @onclick="(async () => await OnClose())"></button>
+            </div>
+            <div class="modal-body">
+                @PreviewText
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-primary btn-sm" @onclick="(async () => await OnClose())">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Display)
+{
+    <div class="modal-backdrop fade @Show"></div>
+}

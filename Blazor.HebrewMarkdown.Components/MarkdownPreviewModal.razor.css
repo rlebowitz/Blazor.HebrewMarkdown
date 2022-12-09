@@ -1,0 +1,14 @@
+﻿.cursor {
+    cursor: pointer;
+    font-weight: bold;
+    color: blue;
+}
+
+.modal.show {
+    z-index: 1064 !important;
+}
+
+.modal-backdrop.show {
+    z-index: 1063 !important;
+}
+

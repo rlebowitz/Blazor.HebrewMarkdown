@@ -1,0 +1,9 @@
+﻿div {
+	display:block;
+	width:100%;
+	min-height: 200px;
+	padding: .375rem .75rem;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
