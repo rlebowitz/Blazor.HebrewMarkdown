@@ -7,3 +7,17 @@
 	border-radius: .25rem;
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+span.oi.left {
+				display: inline-block;
+				position: absolute;
+				left: 5px;
+				cursor: pointer;
+}
+
+span.oi.right {
+				display: inline-block;
+				position: absolute;
+				right: 5px;
+				cursor: pointer;
+}

@@ -12,3 +12,16 @@
     z-index: 1063 !important;
 }
 
+span.oi.left {
+				display: inline-block;
+				position: absolute;
+				left: 5px;
+				cursor: pointer;
+}
+
+span.oi.right {
+				display: inline-block;
+				position: absolute;
+				right: 5px;
+				cursor: pointer;
+}

@@ -21,6 +21,7 @@ namespace Blazor.HebrewMarkdown.Components
         private IJSObjectReference? Module { get; set; }
         private bool Display { get; set; } = false;
         private string Direction => Markdown != null && Markdown.IsHebrew() ? "rtl" : "ltr";
+        private string Position => Markdown != null && Markdown.IsHebrew() ? "left" : "right";
         private ElementReference Element { get; set; }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -42,7 +43,7 @@ namespace Blazor.HebrewMarkdown.Components
 
         private async Task OnInput(KeyboardEventArgs args)
         {
-            if (args.AltKey && args.Key == "p")
+            if (args.AltKey && (args.Key == "p" || args.Key == "פ"))
             {
                 Display = true;
                 return;

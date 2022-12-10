@@ -15,7 +15,7 @@ namespace Blazor.HebrewMarkdown.Components
     public partial class MarkdownPreviewModal
     {
         [Parameter]
-        public string? MarkdownText { get; set; }
+        public string? MarkdownText { get; set; } = string.Empty;
         [Parameter]
         public bool Display { get; set; } = false;
         [Parameter]
@@ -27,6 +27,7 @@ namespace Blazor.HebrewMarkdown.Components
         private string? DisplayType { get; set; }
         private MarkupString? PreviewText { get; set; }
         private MarkdownPipeline? Pipeline { get; set; }
+        private string Direction => MarkdownText != null && MarkdownText.IsHebrew() ? "rtl" : "ltr";
 
         protected override async Task OnInitializedAsync()
         {
@@ -49,17 +50,9 @@ namespace Blazor.HebrewMarkdown.Components
             PreviewText = (MarkupString)Markdown.ToHtml(MarkdownText ?? string.Empty, Pipeline);
         }
 
-        //protected override async Task OnAfterRenderAsync(bool firstRender)
-        //{
-        //    if (firstRender)
-        //    {
-        //        await Control.FocusAsync();
-        //    }
-        //}
-
         private async Task OnKeyDown(KeyboardEventArgs args)
         {
-            if (args.AltKey && args.Key == "c")
+            if (args.AltKey && (args.Key == "c" || args.Key == "צ"))
             {
                 await OnClose();
             }
